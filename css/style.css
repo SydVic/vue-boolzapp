@@ -2,6 +2,8 @@
 :root {
     --profile-container-height: 60px;
     --message-input-height: 60px;
+    --new-notifications-height: 70px;
+    --chat-search-height: 40px;
 }
 
 /* RESET */
@@ -12,6 +14,10 @@
 }
 
 /* COMMON */
+html {
+    font-family: 'Lato', sans-serif;
+}
+
 .webapp-general-container {
     height: 100vh;
     width: 100%;
@@ -42,29 +48,52 @@
 .my-profile {
     height: var(--profile-container-height);
     width: 100%;
-    border-right: 2px solid #dedede;
     background-color: #eaeaea;
+    border-right: 1px solid #dedede;
+}
+
+.new-notifications {
+    height: var(--new-notifications-height);
+    width: 100%;
+    background-color: #8edafc;
+}
+
+.chat-search {
+    height: var(--chat-search-height);
+    text-align: center;
+    background-color: #fafafa;
+    padding: .3rem 0;
+}
+
+.chat-search input {
+    width: 98%;
+    border: 1px solid #d8d5d5;
+}
+
+.my-contacts {
+    height: calc(100% - (var(--profile-container-height) + var(--new-notifications-height) + var(--chat-search-height)));
+    width: 100%;
+    overflow-y: auto;
 }
 
 /* SECTION MY CHAT */
 .active-chat-container {
     width: 65%;
     height: 100%;
-
-    /* test */
-    background-color: rgb(255, 253, 127);
 }
 
 .active-chat-profile {
     height: var(--profile-container-height);
     width: 100%;
     background-color: #eaeaea;
+    border-left: 1px solid #dedede;
 }
 
 .active-chat-messages {
     height: calc(100% - (var(--profile-container-height) + var(--message-input-height)));
     width: 100%;
     background-image: url(../img/mine.jpg);
+    overflow-y: auto;
 }
 
 .active-chat-new-message {
