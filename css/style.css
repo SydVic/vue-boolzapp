@@ -156,12 +156,27 @@ html {
 .contact-object {
     width: 100%;
     border-bottom: 1px solid lightgrey;
-    padding: .5rem .3rem .5rem .5rem;
+    padding: .5rem;
     display: flex;
 }
 
+.contact-info {
+    margin-left: 1rem;
+}
+
+.contact-profile-name {
+    font-weight: 700;
+}
+
+.contact-last-message {
+    color: #b6b9bb;
+    font-size: .9rem;
+}
+
 .time {
-    
+    color: #b6b9bb;
+    font-size: .7rem;
+    margin-left: auto;
 }
 
 /* SECTION MY CHAT */
