@@ -55,12 +55,10 @@ html {
 .my-profile-container {
     width: 35%;
     height: 100%;
-
-    /* test */
-    background-color: #7fffd4;
+    background-color: #ffffff;
 }
 
-.my-profile {
+.my-profile-bar {
     height: var(--profile-container-height);
     width: 100%;
     background-color: #eaeaea;
@@ -68,6 +66,15 @@ html {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.my-profile {
+    display: flex;
+    align-items: center;
+}
+
+.my-profile-name {
+    font-weight: 700;
 }
 
 .profile-img-wrapper {
@@ -83,9 +90,33 @@ html {
     height: var(--new-notifications-height);
     width: 100%;
     background-color: #8edafc;
+    display: flex;
+    align-items: center;
+}
+
+.new-notifications-icon-wrapper {
+    width: 50px;
+    height: 50px;
+    color: #8edafc;
+    background-color: #ffffff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50px;
+    margin: 0 .5rem 0 1rem;
+}
+
+.new-notifications-title {
+    font-weight: 700;
+}
+
+.new-notifications-cta {
+    font-size: .9rem;
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 .chat-search {
+    width: 100%;
     height: var(--chat-search-height);
     background-color: #fafafa;
     padding: .3rem 0;
@@ -94,10 +125,26 @@ html {
     align-items: center;
 }
 
-.chat-search input {
+.input-wrapper {
     width: 98%;
-    border: 1px solid #d8d5d5;
-    padding: .3rem 0 .3rem 3.5rem;
+    border: 1px solid #f5f5f5;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.search-icon-wrapper {
+    color: #b1b1b1;
+    height: 100%;
+    width: 15%;
+    border-right: 1px solid #f5f5f5;
+    text-align: center;
+}
+
+.chat-search input {
+    width: 85%;
+    border: transparent;
+    padding: .3rem 0 .3rem .3rem;
 }
 
 .my-contacts {
@@ -106,13 +153,24 @@ html {
     overflow-y: auto;
 }
 
+.contact-object {
+    width: 100%;
+    border-bottom: 1px solid lightgrey;
+    padding: .5rem .3rem .5rem .5rem;
+    display: flex;
+}
+
+.time {
+    
+}
+
 /* SECTION MY CHAT */
 .active-chat-container {
     width: 65%;
     height: 100%;
 }
 
-.active-chat-profile {
+.active-chat-bar {
     height: var(--profile-container-height);
     width: 100%;
     background-color: #eaeaea;
@@ -120,6 +178,23 @@ html {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.active-chat-profile {
+    display: flex;
+    align-items: center;
+}
+
+.active-chat-profile-info {
+    margin-left: .8rem;
+}
+
+.active-chat-profile-name {
+    font-weight: 700;
+}
+
+.active-chat-profile-last-access {
+    font-size: .8rem;
 }
 
 .active-chat-messages {

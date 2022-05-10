@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,700&display=swap" rel="stylesheet">
     <!-- Custom style -->
     <link rel="stylesheet" href="css/style.css">
     <!-- VueJS -->
@@ -31,12 +32,20 @@
                 <section class="my-profile-container">
 
                     <!-- MY PROFILE -->
-                    <div class="my-profile">
-                        <!-- MY PROFILE IMG -->
-                        <div class="profile-img-wrapper">
-                            <img src="img/avatar_io.jpg" alt="">
+                    <div class="my-profile-bar">
+                        <div class="my-profile">
+                            <!-- MY PROFILE IMG -->
+                            <div class="profile-img-wrapper">
+                                <img src="img/avatar_io.jpg" alt="">
+                            </div>
+                            <!-- /MY PROFILE IMG -->
+
+                            <!-- MY PROFILE NAME -->
+                            <div class="my-profile-name">
+                                Sofia
+                            </div>
+                            <!-- /MY PROFILE NAME -->
                         </div>
-                        <!-- /MY PROFILE IMG -->
 
                         <!-- MY PROFILE OPTIONS -->
                         <div class="profile-options">
@@ -57,18 +66,53 @@
                     <!-- NEW NOTIFICATIONS -->
                     <div class="new-notifications">
 
+                        <div class="new-notifications-icon-wrapper">
+                            <i class="fas fa-bell-slash"></i>
+                        </div>
+
+                        <div class="new-notifications-text">
+                            <div class="new-notifications-title">
+                                Ricevi notifiche di nuovi messaggi 
+                            </div>
+                            <div class="new-notifications-cta">
+                                Attiva notifiche desktop
+                            </div>
+                        </div>
+
                     </div>
                     <!-- /NEW NOTIFICATIONS -->
 
                     <!-- CHAT SEARCH INPUT -->
                     <div class="chat-search">
-                        <input type="text" placeholder="Cerca o inizia una nuova chat">
+                        <div class="input-wrapper">
+                            <div class="search-icon-wrapper">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <input type="text" placeholder="Cerca o inizia una nuova chat">
+                        </div>
                     </div>
                     <!-- CHAT SEARCH INPUT -->
 
                     <!-- MY CONTACTS LIST -->
                     <div class="my-contacts">
-                        
+                        <ul class="my-contacts-list">
+                            <li v-for="object in contacts" class="contact-object">
+                                <div class="profile-img-wrapper">
+                                    <img :src="'img/avatar' + object.avatar + '.jpg'" alt="">
+                                </div>
+                                <div class="contact-info">
+                                    <div class="profile-nmae">
+                                        {{ object.name }}
+                                    </div>
+                                    <div>
+                                        Ultimo messaggio inviato
+                                    </div>
+                                </div>
+                                <div class="time">
+                                    12:00
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                     <!-- /MY CONTACTS LIST -->
 
@@ -79,12 +123,30 @@
                 <section class="active-chat-container">
 
                     <!-- ACTIVE CHAT PROFILE -->
-                    <div class="active-chat-profile">
-                        <!-- ACTIVE CHAT PROFILE IMG -->
-                        <div class="profile-img-wrapper">
-                            <img src="img/avatar_1.jpg" alt="">
+                    <div class="active-chat-bar">
+                        <div class="active-chat-profile">
+
+                            <!-- ACTIVE CHAT PROFILE IMG -->
+                            <div class="profile-img-wrapper">
+                                <img src="img/avatar_1.jpg" alt="">
+                            </div>
+                            <!-- /ACTIVE CHAT PROFILE IMG -->
+
+                            <div class="active-chat-profile-info">
+                                <!-- ACTIVE CHAT PROFILE NAME -->
+                                <div class="active-chat-profile-name">
+                                    Michele
+                                </div>
+                                <!-- /ACTIVE CHAT PROFILE NAME -->
+
+                                <!-- ACTIVE CHAT PROFILE LAST ACCESS -->
+                                <div class="active-chat-profile-last-access">
+                                    Ultimo accesso oggi alle 12:00
+                                </div>
+                                <!-- /ACTIVE CHAT LAST ACCESS -->
+                            </div>
+
                         </div>
-                        <!-- /ACTIVE CHAT PROFILE IMG -->
 
                         <!-- ACTIVE CHAT OPTIONS -->
                         <div class="profile-options">
