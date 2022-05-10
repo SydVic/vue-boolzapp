@@ -1,9 +1,74 @@
+/* VARIABLES */
+:root {
+    --profile-container-height: 60px;
+    --message-input-height: 60px;
+}
+
+/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    background-color: #808080;
+/* COMMON */
+.webapp-general-container {
+    height: 100vh;
+    width: 100%;
+    background-color: #d3d3d3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.webapp-container {
+    height: 90%;
+    width: 80%;
+    display: flex;
+
+    /* test */
+    border: 1px solid black;
+}
+
+/* SECTION MY PROFILE */
+.my-profile-container {
+    width: 35%;
+    height: 100%;
+
+    /* test */
+    background-color: #7fffd4;
+}
+
+.my-profile {
+    height: var(--profile-container-height);
+    width: 100%;
+    border-right: 2px solid #dedede;
+    background-color: #eaeaea;
+}
+
+/* SECTION MY CHAT */
+.active-chat-container {
+    width: 65%;
+    height: 100%;
+
+    /* test */
+    background-color: rgb(255, 253, 127);
+}
+
+.active-chat-profile {
+    height: var(--profile-container-height);
+    width: 100%;
+    background-color: #eaeaea;
+}
+
+.active-chat-messages {
+    height: calc(100% - (var(--profile-container-height) + var(--message-input-height)));
+    width: 100%;
+    background-image: url(../img/mine.jpg);
+}
+
+.active-chat-new-message {
+    height: var(--message-input-height);
+    width: 100%;
+    background-color: #f3eeea;
 }
