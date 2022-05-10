@@ -212,6 +212,7 @@ html {
     font-size: .8rem;
 }
 
+/* MESSAGES SECTION */
 .active-chat-messages {
     height: calc(100% - (var(--profile-container-height) + var(--message-input-height)));
     width: 100%;
@@ -219,6 +220,25 @@ html {
     overflow-y: auto;
 }
 
+.message-line {
+    width: 100%;
+
+    /* test */
+    border: 1px solid black;
+}
+
+.message-sent {
+    background-color: #d5f9ba;
+    max-width: 60%;
+    margin-left: auto;
+}
+
+.message-received {
+    max-width: 60%;
+    background-color: #ffffff;
+}
+
+/* NEW MESSAGE BAR */
 .active-chat-new-message {
     height: var(--message-input-height);
     width: 100%;
@@ -243,4 +263,5 @@ html {
 .icon-wrapper-chat {
     color: #6b7376;
     font-size: 1.5rem;
+    cursor: pointer;
 }
