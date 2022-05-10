@@ -74,7 +74,7 @@ html {
 }
 
 .my-profile-name {
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .profile-img-wrapper {
@@ -106,7 +106,7 @@ html {
 }
 
 .new-notifications-title {
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .new-notifications-cta {
@@ -165,7 +165,7 @@ html {
 }
 
 .contact-profile-name {
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .contact-last-message {
@@ -205,7 +205,7 @@ html {
 }
 
 .active-chat-profile-name {
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .active-chat-profile-last-access {
@@ -223,4 +223,24 @@ html {
     height: var(--message-input-height);
     width: 100%;
     background-color: #f3eeea;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3rem;
+}
+
+.new-message-wrapper {
+    width: 90%;
+}
+
+.new-message-wrapper input {
+    border: transparent;
+    width: 100%;
+    padding: .8rem 0 .8rem .5rem;
+    border-radius: 5px;
+}
+
+.icon-wrapper-chat {
+    color: #6b7376;
+    font-size: 1.5rem;
 }
