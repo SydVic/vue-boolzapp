@@ -182,38 +182,6 @@
                             </div>
                         </div>
 
-
-                        <!-- <div class="message-line">
-                            <div class="message sent">
-                                <div class="message-text">
-                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores dignissimos natus ex facilis dicta, rem distinctio, eligendi qui dolore voluptatum est magni ullam! Repudiandae nesciunt, laborum placeat voluptates aliquid consequatur.
-                                </div>
-                                <div class="message-time">
-                                    15:30
-                                </div>
-                            </div>
-                        </div>
-                        <div class="message-line">
-                            <div class="message sent">
-                                <div class="message-text">
-                                    Ricordati di stendere i panni
-                                </div>
-                                <div class="message-time">
-                                    15:30
-                                </div>
-                            </div>
-                        </div>
-                        <div class="message-line">
-                            <div class="message received">
-                                <div class="message-text">
-                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores dignissimos natus ex facilis dicta, rem distinctio, eligendi qui dolore voluptatum est magni ullam! Repudiandae nesciunt, laborum placeat voluptates aliquid consequatur.
-                                </div>
-                                <div class="message-time">
-                                    15:30
-                                </div>
-                            </div>
-                        </div> -->
-
                     </div>
                     <!-- /ACTIVE CHAT MESSAGES -->
 
@@ -223,7 +191,11 @@
                             <i class="far fa-smile"></i>
                         </div>
                         <div class="new-message-wrapper">
-                            <input type="text" placeholder="Scrivi un messaggio">
+                            <input 
+                            type="text" 
+                            placeholder="Scrivi un messaggio"
+                            v-model="newMessage"
+                            @keyup.enter="sendNewMessage">
                         </div>
                         <div class="icon-wrapper-chat">
                             <i class="fas fa-microphone"></i>

@@ -166,10 +166,20 @@ const app = new Vue (
                 }
             ],
             selectedContact: 0,
+            newMessage: '',
         },
         methods: {
             selectChat: function(index) {
                 this.selectedContact = index;
+            },
+            sendNewMessage: function() {
+                const newMessageObject = {
+                    date: 'xx/xx/xxxx xx:xx:xx',
+                    message: this.newMessage,
+                    status: 'sent',
+                }
+                this.contacts[this.selectedContact].messages.push(newMessageObject);
+                this.newMessage = '';
             }
         }
     }

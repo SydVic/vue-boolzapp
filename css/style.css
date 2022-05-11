@@ -167,6 +167,7 @@ html {
     border-bottom: 1px solid lightgrey;
     padding: .5rem;
     display: flex;
+    cursor: pointer;
 }
 
 .contact-info {
