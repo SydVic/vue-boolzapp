@@ -95,16 +95,20 @@
                     <!-- MY CONTACTS LIST -->
                     <div class="my-contacts">
                         <ul class="my-contacts-list">
-                            <li v-for="(object, index) in contacts" class="contact-object" :class="{'active-chat' : selectedContact === index}" @click="selectChat(index)">
+                            <li 
+                            v-for="(object, index) in contacts" 
+                            class="contact-object" 
+                            :class="{'active-chat' : selectedContact === index}" 
+                            @click="selectChat(index)">
                                 <div class="profile-img-wrapper">
-                                    <img :src="'img/avatar' + object.avatar + '.jpg'" alt="element.name">
+                                    <img :src="'img/avatar' + object.avatar + '.jpg'" :alt="object.name">
                                 </div>
                                 <div class="contact-info">
                                     <div class="contact-profile-name">
                                         {{ object.name }}
                                     </div>
                                     <div class="contact-last-message">
-                                        {{ object.messages[0].message }}
+                                        ultimo messaggio
                                     </div>
                                 </div>
                                 <div class="time">
@@ -127,7 +131,7 @@
 
                             <!-- ACTIVE CHAT PROFILE IMG -->
                             <div class="profile-img-wrapper">
-                                <img :src="'img/avatar' + contacts[selectedContact].avatar + '.jpg'" alt="element.name">
+                                <img :src="'img/avatar' + contacts[selectedContact].avatar + '.jpg'" :alt="contacts[selectedContact].name">
                             </div>
                             <!-- /ACTIVE CHAT PROFILE IMG -->
 
@@ -166,8 +170,20 @@
 
                     <!-- ACTIVE CHAT MESSAGES -->
                     <div class="active-chat-messages">
+                        
+                        <div v-for="item in contacts[selectedContact].messages" class="message-line">
+                            <div class="message" :class="item.status === 'sent' ? 'sent' : 'received'">
+                                <div class="message-text">
+                                    {{ item.message }}
+                                </div>
+                                <div class="message-time">
+                                    {{ item.date }}
+                                </div>
+                            </div>
+                        </div>
 
-                        <div class="message-line">
+
+                        <!-- <div class="message-line">
                             <div class="message sent">
                                 <div class="message-text">
                                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores dignissimos natus ex facilis dicta, rem distinctio, eligendi qui dolore voluptatum est magni ullam! Repudiandae nesciunt, laborum placeat voluptates aliquid consequatur.
@@ -196,7 +212,7 @@
                                     15:30
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
 
                     </div>
                     <!-- /ACTIVE CHAT MESSAGES -->
