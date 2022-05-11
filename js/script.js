@@ -167,11 +167,14 @@ const app = new Vue (
             ],
             selectedContact: 0,
             newMessage: '',
+            searchFilter: '',
         },
         methods: {
+            // assegna a selectedContact lo stesso numero dell'index della chat cliccata
             selectChat: function(index) {
                 this.selectedContact = index;
             },
+            // crea un nuovo oggetto con il testo presente nell'input del nuovo messaggio e lo pusha nell'array dei messaggi della chat corrispondente a quella selezionata
             sendNewMessage: function() {
                 const newMessageObject = {
                     date: 'xx/xx/xxxx xx:xx:xx',
@@ -182,6 +185,7 @@ const app = new Vue (
                 this.newMessage = '';
                 setTimeout(this.newMessageAnswer, 1000);
             },
+            // risponde dopo un secondo al nostro messaggio inviato
             newMessageAnswer: function() {
                 const newMessageAnswerObject = {
                     date: 'xx/xx/xxxx xx:xx:xx',
@@ -189,6 +193,16 @@ const app = new Vue (
                     status: 'received',
                 }
                 this.contacts[this.selectedContact].messages.push(newMessageAnswerObject);
+            },
+            // controlla se la stringa inserita nell'input della ricerca chat corrisponde a qualcuna delle nostre chat e nasconde quelle che non corrispondono alla ricerca
+            filteredChat: function() {
+                this.contacts.forEach(element => {
+                    if (element.name.toLowerCase().includes(this.searchFilter.toLowerCase())) {
+                        element.visible = true;
+                    } else {
+                        element.visible = false;
+                    }
+                });
             }
         },
     }
