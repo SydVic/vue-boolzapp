@@ -180,8 +180,17 @@ const app = new Vue (
                 }
                 this.contacts[this.selectedContact].messages.push(newMessageObject);
                 this.newMessage = '';
+                setTimeout(this.newMessageAnswer, 1000);
+            },
+            newMessageAnswer: function() {
+                const newMessageAnswerObject = {
+                    date: 'xx/xx/xxxx xx:xx:xx',
+                    message: 'Ciao',
+                    status: 'received',
+                }
+                this.contacts[this.selectedContact].messages.push(newMessageAnswerObject);
             }
-        }
+        },
     }
 
 );
