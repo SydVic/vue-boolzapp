@@ -127,14 +127,14 @@
 
                             <!-- ACTIVE CHAT PROFILE IMG -->
                             <div class="profile-img-wrapper">
-                                <img src="img/avatar_1.jpg" alt="">
+                                <img :src="'img/avatar' + contacts[selectedContact].avatar + '.jpg'" alt="element.name">
                             </div>
                             <!-- /ACTIVE CHAT PROFILE IMG -->
 
                             <div class="active-chat-profile-info">
                                 <!-- ACTIVE CHAT PROFILE NAME -->
                                 <div class="active-chat-profile-name">
-                                    Michele
+                                    {{ contacts[selectedContact].name }}
                                 </div>
                                 <!-- /ACTIVE CHAT PROFILE NAME -->
 
