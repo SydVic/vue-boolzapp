@@ -164,8 +164,14 @@ const app = new Vue (
                         }
                     ],
                 }
-            ]
+            ],
+            selectedContact: 0,
         },
+        methods: {
+            selectChat: function(index) {
+                this.selectedContact = index;
+            }
+        }
     }
 
 );

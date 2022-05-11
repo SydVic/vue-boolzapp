@@ -22,22 +22,24 @@ html {
     font-family: 'Lato', sans-serif;
 }
 
-.webapp-general-container {
+#root {
     height: 100vh;
     width: 100%;
-    background-color: #d3d3d3;
+}
+
+.webapp-general-container {
+    height: 100%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    background: linear-gradient(to bottom, #019687 0vh, #019687 15vh, #dbdad8 15vh, #dbdad8 100%);
 }
 
 .webapp-container {
     height: 90%;
     width: 80%;
     display: flex;
-
-    /* test */
-    border: 1px solid black;
 }
 
 .profile-options {
@@ -60,6 +62,9 @@ html {
     width: 35%;
     height: 100%;
     background-color: #ffffff;
+    min-width: 450px;
+    display: flex;
+    flex-direction: column;
 }
 
 .my-profile-bar {
@@ -152,9 +157,9 @@ html {
 }
 
 .my-contacts {
-    height: calc(100% - (var(--profile-container-height) + var(--new-notifications-height) + var(--chat-search-height)));
     width: 100%;
-    overflow-y: auto;
+    overflow-y: scroll;
+    flex-grow: 1;
 }
 
 .contact-object {
@@ -187,6 +192,7 @@ html {
 .active-chat-container {
     width: 65%;
     height: 100%;
+    min-width: 500px;
 }
 
 .active-chat-bar {
@@ -221,7 +227,7 @@ html {
     height: calc(100% - (var(--profile-container-height) + var(--message-input-height)));
     width: 100%;
     background-image: url(../img/mine.jpg);
-    overflow-y: auto;
+    overflow-y: scroll;
     padding: 1.5rem 2.5rem ;
 }
 
@@ -233,25 +239,22 @@ html {
 
 /* fare refactoring con classe comune */
 /* e classe da assegnare con Vue */
-.message-sent {
-    background-color: #d5f9ba;
+.message {
     min-width: 300px;
     max-width: 60%;
-    margin-left: auto;
     display: flex;
     flex-direction: column;
     padding: 1rem .3rem .5rem 1rem;
     border-radius: 15px;
 }
 
-.message-received {
-    min-width: 300px;
-    max-width: 60%;
+.sent {
+    margin-left: auto;
+    background-color: #d5f9ba;
+}
+
+.received {
     background-color: #ffffff;
-    display: flex;
-    flex-direction: column;
-    padding: 1rem .3rem .5rem 1rem;
-    border-radius: 15px;
 }
 
 .message-time {

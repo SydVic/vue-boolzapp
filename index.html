@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boolzapp</title>
-    <!-- Icons - FontAwesome CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@300;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+    <!-- Icons - FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Custom style -->
     <link rel="stylesheet" href="css/style.css">
+    <title>Boolzapp</title>
     <!-- VueJS -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 </head>
@@ -95,16 +95,16 @@
                     <!-- MY CONTACTS LIST -->
                     <div class="my-contacts">
                         <ul class="my-contacts-list">
-                            <li v-for="object in contacts" class="contact-object">
+                            <li v-for="(object, index) in contacts" class="contact-object" :class="{'active-chat' : selectedContact === index}" @click="selectChat(index)">
                                 <div class="profile-img-wrapper">
-                                    <img :src="'img/avatar' + object.avatar + '.jpg'" alt="">
+                                    <img :src="'img/avatar' + object.avatar + '.jpg'" alt="element.name">
                                 </div>
                                 <div class="contact-info">
                                     <div class="contact-profile-name">
                                         {{ object.name }}
                                     </div>
                                     <div class="contact-last-message">
-                                        Ultimo messaggio inviato
+                                        {{ object.messages[0].message }}
                                     </div>
                                 </div>
                                 <div class="time">
@@ -168,9 +168,9 @@
                     <div class="active-chat-messages">
 
                         <div class="message-line">
-                            <div class="message-sent">
+                            <div class="message sent">
                                 <div class="message-text">
-                                    Hai portato a spasso il cane?
+                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores dignissimos natus ex facilis dicta, rem distinctio, eligendi qui dolore voluptatum est magni ullam! Repudiandae nesciunt, laborum placeat voluptates aliquid consequatur.
                                 </div>
                                 <div class="message-time">
                                     15:30
@@ -178,7 +178,7 @@
                             </div>
                         </div>
                         <div class="message-line">
-                            <div class="message-sent">
+                            <div class="message sent">
                                 <div class="message-text">
                                     Ricordati di stendere i panni
                                 </div>
@@ -188,9 +188,9 @@
                             </div>
                         </div>
                         <div class="message-line">
-                            <div class="message-received">
+                            <div class="message received">
                                 <div class="message-text">
-                                    Tutto fatto!
+                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores dignissimos natus ex facilis dicta, rem distinctio, eligendi qui dolore voluptatum est magni ullam! Repudiandae nesciunt, laborum placeat voluptates aliquid consequatur.
                                 </div>
                                 <div class="message-time">
                                     15:30
