@@ -208,8 +208,3 @@ const app = new Vue (
     }
 
 );
-
-
-const date = dayjs().format('DD/MM/YYYY h:mm:ss');
-console.log(date);
-
