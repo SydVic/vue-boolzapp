@@ -155,7 +155,7 @@ html {
     border: transparent;
     padding: .3rem 0 .3rem .3rem;
 }
-
+/* MY CONTACTS */
 .my-contacts {
     width: 100%;
     overflow-y: scroll;
@@ -168,6 +168,10 @@ html {
     padding: .5rem;
     display: flex;
     cursor: pointer;
+}
+
+.contact-object:hover {
+    background-color: #f3f0f0;
 }
 
 .contact-info {

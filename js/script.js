@@ -177,7 +177,7 @@ const app = new Vue (
             // crea un nuovo oggetto con il testo presente nell'input del nuovo messaggio e lo pusha nell'array dei messaggi della chat corrispondente a quella selezionata
             sendNewMessage: function() {
                 const newMessageObject = {
-                    date: 'xx/xx/xxxx xx:xx:xx',
+                    date: dayjs().format('DD/MM/YYYY h:mm:ss A'),
                     message: this.newMessage,
                     status: 'sent',
                 }
@@ -188,8 +188,8 @@ const app = new Vue (
             // risponde dopo un secondo al nostro messaggio inviato
             newMessageAnswer: function() {
                 const newMessageAnswerObject = {
-                    date: 'xx/xx/xxxx xx:xx:xx',
-                    message: 'Ciao',
+                    date: dayjs().format('DD/MM/YYYY h:mm:ss A'),
+                    message: 'Ok',
                     status: 'received',
                 }
                 this.contacts[this.selectedContact].messages.push(newMessageAnswerObject);
@@ -203,11 +203,13 @@ const app = new Vue (
                         element.visible = false;
                     }
                 });
-            }
+            },
         },
     }
 
 );
 
 
+const date = dayjs().format('DD/MM/YYYY h:mm:ss');
+console.log(date);
 
