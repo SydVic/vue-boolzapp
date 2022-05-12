@@ -207,7 +207,7 @@ const app = new Vue (
                 this.newMessage = '';
                 setTimeout(this.newMessageAnswer, 1000);
             },
-            // risponde dopo un secondo al nostro messaggio inviato
+            // risponde al nostro messaggio inviato quando richiamata sopra
             newMessageAnswer: function() {
                 const newMessageAnswerObject = {
                     date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
@@ -227,9 +227,11 @@ const app = new Vue (
                     }
                 });
             },
+            // cambia l'attributo del v-show del messaggio selezionato da false a true e viceversa
             showSubMenu: function(index) {
                 this.contacts[this.selectedContact].messages[index].subMenuShow = !this.contacts[this.selectedContact].messages[index].subMenuShow;
             },
+            // cancella il messaggio selezionato dall'array dei messaggi e riporta la chiave subMenuShow a false per evitare cher venga mostrato il sub menu del messaggio successivo
             deleteMessage: function(index) {
                 this.contacts[this.selectedContact].messages.splice(index, 1);
                 this.contacts[this.selectedContact].messages[index].subMenuShow = !this.contacts[this.selectedContact].messages[index].subMenuShow;
