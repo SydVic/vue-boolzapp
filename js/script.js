@@ -237,10 +237,5 @@ const app = new Vue (
                 this.contacts[this.selectedContact].messages[index].subMenuShow = !this.contacts[this.selectedContact].messages[index].subMenuShow;
             },
         },
-        computed: {
-            LastMessage() {
-                return 0;
-            },
-        },
     }
 );
