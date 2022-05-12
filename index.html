@@ -35,7 +35,7 @@
                         <div class="my-profile">
                             <!-- MY PROFILE IMG -->
                             <div class="profile-img-wrapper">
-                                <img src="img/avatar_io.jpg" alt="">
+                                <img src="img/avatar_io.jpg" alt="Sofia">
                             </div>
                             <!-- /MY PROFILE IMG -->
 
@@ -176,14 +176,29 @@
                     <!-- ACTIVE CHAT MESSAGES -->
                     <div class="active-chat-messages">
                         
-                        <div v-for="item in contacts[selectedContact].messages" class="message-line">
-                            <div class="message" :class="item.status === 'sent' ? 'sent' : 'received'">
+                        <div v-for="(item, index) in contacts[selectedContact].messages" class="message-line">
+
+                            <div class="message" :class="item.status === 'sent' ? 'sent' : 'received'" @click="showSubMenu(index)">
+                                <!-- visto che classi hanno stesso nome del valore della chiave si poteva fare cosi -->
+                                <!-- :class="item.status" -->
                                 <div class="message-text">
                                     {{ item.message }}
                                 </div>
                                 <div class="message-time">
                                     {{ item.date }}
                                 </div>
+
+                                <!-- sub-menu per cancellare -->
+                                <div class="sub-menu-message-option" v-show="item.subMenuShow">
+                                    <div class="sub-menu-message-info">
+                                        Message Info 
+                                    </div>
+                                    <div class="sub-menu-delete-message">
+                                        Delete Message
+                                    </div>
+                                </div>
+                                <!-- /sub-menu per cancellare -->
+
                             </div>
                         </div>
 
