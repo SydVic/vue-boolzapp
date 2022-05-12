@@ -25,7 +25,7 @@ const app = new Vue (
                             message: 'Tutto fatto!',
                             status: 'received',
                             subMenuShow: false,
-                        }
+                        },
                     ],
                 },
                 {
@@ -235,13 +235,12 @@ const app = new Vue (
             deleteMessage: function(index) {
                 this.contacts[this.selectedContact].messages.splice(index, 1);
                 this.contacts[this.selectedContact].messages[index].subMenuShow = !this.contacts[this.selectedContact].messages[index].subMenuShow;
-            }
+            },
         },
-        // e poi in html sostituisci this.contacts[this.selectedContact] con selectedContactObj
-        // computed: {
-        //     selectedContactObj() {
-        //         return this.contacts[this.selectedContact];
-        //     }
-        // },
+        computed: {
+            LastMessage() {
+                return 0;
+            },
+        },
     }
 );
