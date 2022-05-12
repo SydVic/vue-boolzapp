@@ -230,6 +230,10 @@ const app = new Vue (
             showSubMenu: function(index) {
                 this.contacts[this.selectedContact].messages[index].subMenuShow = !this.contacts[this.selectedContact].messages[index].subMenuShow;
             },
+            deleteMessage: function(index) {
+                this.contacts[this.selectedContact].messages.splice(index, 1);
+                this.contacts[this.selectedContact].messages[index].subMenuShow = !this.contacts[this.selectedContact].messages[index].subMenuShow;
+            }
         },
         // e poi in html sostituisci this.contacts[this.selectedContact] con selectedContactObj
         // computed: {
